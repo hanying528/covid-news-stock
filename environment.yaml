@@ -1,0 +1,13 @@
+name: news-nlp
+channels:
+  - conda-forge
+
+dependencies:
+  - python =3.8
+  - ipython
+  - jupyter
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  # - GoogleNews  # pip install
