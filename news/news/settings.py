@@ -1,4 +1,4 @@
-# Scrapy settings for google_news project
+# Scrapy settings for news project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'google_news'
+BOT_NAME = 'news'
 
-SPIDER_MODULES = ['google_news.spiders']
-NEWSPIDER_MODULE = 'google_news.spiders'
+SPIDER_MODULES = ['news.spiders']
+NEWSPIDER_MODULE = 'news.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'google_news (+http://www.yourdomain.com)'
+#USER_AGENT = 'news (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'google_news.middlewares.GoogleNewsSpiderMiddleware': 543,
+#    'news.middlewares.GoogleNewsSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'google_news.middlewares.GoogleNewsDownloaderMiddleware': 543,
+#    'news.middlewares.GoogleNewsDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'google_news.pipelines.GoogleNewsPipeline': 300,
+#    'news.pipelines.GoogleNewsPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
