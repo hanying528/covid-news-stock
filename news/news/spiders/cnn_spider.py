@@ -12,15 +12,23 @@ class CNNNews(scrapy.Spider):
         # Get all the news summary from the current page
         results = response.json()['result']
         headlines = []
+        dates = []
         for res in results:
-            headlines.append(res['headline'])
+            headline = res['headline']
+            # Only if headline contains the following keywords
+            if 'covid' in headline.lower() or 'coronavirus' in headline.lower() \
+                    or 'pandemic' in headline.lower() or 'sars' in headline.lower()\
+                    or 'vaccination' in headline.lower() or 'virus' in headline.lower():
+                dt = res['firstPublishDate'][:10]  # we only need the date
+                dates.append(dt)
+                headlines.append(headline)
         page = response.url.split("/")[-2]
         filename = f'{self.name}-{page}.txt'
 
         # Save to file (append mode)
         with open(filename, 'a') as f:
-            for headline in headlines:
-                f.write("%s\n" % headline)
+            for dt, headline in zip(dates, headlines):
+                f.write(f"{dt}, {headline}\n")
         self.log(f'Updated file {filename}')
 
         # Next page
